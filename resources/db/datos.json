@@ -1,0 +1,5 @@
+{"accounts": [
+    { "id":1,"nombre": "Mali", "saldo": 200 , "pin": "1234" },
+    { "id":2,"nombre": "Gera", "saldo": 290 , "pin": "1234" },
+    { "id":3,"nombre": "Maui", "saldo": 670 , "pin": "1234" }
+  ]}

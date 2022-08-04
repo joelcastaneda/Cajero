@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="/resources/css/style.css" rel="stylesheet">
+    <title>Cajero</title>
+</head> 
+
+<body onload="principal()">
+    <!--Principal-->
+    <div class="container text-center " >
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-7 mx-auto">
+          <div class="card border-0 shadow rounded-3 my-5">
+           <p class="fs-4 text-center fw-bold form-control ">Cajero Automatico</p>
+          <div class="card-body p-4 p-sm-5" >
+                <div class="principals form-control">
+                  <h5 id="p_user"></h5>
+                  <h5 id="p_money"></h5>
+              </div>
+          </div>
+            <div class="card-body p-4 p-sm-5" >
+                    <div clas="buttons">
+                        <button   type="button" class="btn btn-success" data-toggle="modal" data-target="#ingresar" >Depositar</button>
+                        <button   type="button" class="btn btn-info" data-toggle="modal" data-target="#retirar" >Retirar</button>
+                        <button  onclick="salir()"  type="button" class="btn btn-danger " data-toggle="modal" data-target="#retirar" >Salir</button>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+        <!--Ingresar-->
+        <div id="ingresar" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4>Deposito:</h4>
+              </div>
+              <div class="modal-body">
+                <h4>Cantidad:</h4>
+                  <input id="cantidad_ingreso" min="1" name="saldo"  placeholder="$0.00" class="form-control" tabindex="1" type="number"  onkeypress="return event.charCode >= 48" autofocus required>
+              </div>
+              <div class="modal-footer">
+                <button onclick="depositar()" type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Retirar-->
+        <div id="retirar" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4>Retiro:</h4>
+              </div>
+              <div class="modal-body">
+                  <h4>Cantidad:</h4>
+                  <input id="cantidad_retiro" min="1" placeholder="$0.00"  name="cantidad_retiro"  class="form-control" tabindex="2" type="number"  onkeypress="return event.charCode >= 48" autofocus required>
+              </div>
+              <div class="modal-footer">
+                <button onclick="retirar()" type="button" class="btn btn-success" ><i class="fa-solid fa-check"></i></button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+</body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/3096207cd6.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/resources/js/main.js"></script>
+<script src="/resources/js/errors.js"></script>
+</html>
